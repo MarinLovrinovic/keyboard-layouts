@@ -8,59 +8,67 @@
 )
 
 (defsrc
+                                                                                                         bspc
   tab      q        w        e        r        t            i        o        p        [        ]        \
   caps     a        s        d        f        g            k        l        ;        '        ret
   lsft     y        x        c        v        b            ,        .        -        rsft
-                             lmet     lalt     spc          ralt     102d     left
+                             lmet     lalt     spc          ralt     102d     left     up       down     rght
 )
 
 (deflayer base
+                                                                                                         esc
   @đ       q        w        e        @s2_r    t            y        u        i        o        p        @ž
   @ć       @met_a   @alt_s   @ctl_d   @sft_f   g            h        @sft_j   @ctl_k   @alt_l   @met_č
   @š       z        x        c        v        b            n        m        ,        .
-                             @fn_del  @num_ret @s1_bspc     @nav_spc @med_tab esc
+                             @fn_del  @num_ret @s1_bspc     @nav_spc @med_tab left     up       down     rght
 )
 
 (deflayer navigation
+                                                                                                         _
   _        pgup     @redo    up       @undo    ins          _        _        _        _        _        _
   XX       home     left     down     rght     caps         _        rsft     rctl     lalt     rmet
   _        pgdn     @cut     @copy    @paste   end          _        _        _        XX
-                             _        XX       _            _        _        _
+                             _        XX       _            _        _        _        _        _        _
 )
 
 (deflayer media
+                                                                                                         _
   _        _        _        prev     next     _            _        _        _        _        _        _
   _        _        /        voldwn   volu     _            _        rsft     rctl     lalt     rmet
   _        _        _        _        _        _            _        _        _        XX
-                             _        pp       mute         _        _        _
+                             _        pp       mute         _        _        _        _        _        _
 )
 
 (deflayer symbols1
-  _        _        _        _        _        _            @€       @[       @\\      @]       _        _
-  _        lmet     lalt     lctl    lsft      _            @`       @{       S-2      @}       @^
-  XX       _        _        _        _        _            @~       @&       @'       @|
-                             XX       XX       _            S--      -        @@
+                                                                                                         _
+  _        _        _        _        _        _            @^       @[       @\\      @]       @€       _
+  _        lmet     lalt     lctl    lsft      _            @`       @{       S-2      @}       @~
+  XX       _        _        _        _        _            @@       @&       @'       @|
+                             XX       XX       _            S--      -        _        _        _        _
 )
 
 (deflayer symbols2
+                                                                                                         _
   _        _        _        _        _        _            _        @<       @/       @>       _        _
   _        lmet     lalt     lctl    lsft      _            $        @lbr     !        @rbr     _
   XX       _        _        _        _        _            @*       @#       @?       %
-                             XX       XX       _            _        _        _
+                             XX       XX       _            _        _        _        _        _        _
 )
 
 (deflayer numbers
+                                                                                                         _
   _        _        _        _        _        _            @+       7        8        9        @*       @^
   _        lmet     lalt     lctl     lsft     _            @=       4        5        6        @/
   XX       _        _        _        _        _            -        1        2        3
-                             XX       _        _            _        0        .
+                             XX       _        _            0        .        _        _        _        _
 )
 
 (deflayer function
+                                                                                                         _
   _        _        _        _        _        _            f12      f7       f8       f9       ssrq     pause
   _        lmet     lalt     lctl     lsft     _            f11      f4       f5       f6       slck
   XX       _        _        _        _        _            f10      f1       f2       f3
-                             XX       XX       _            _        _        _
+                             XX       XX       _            _        _        _        _        _        _
 )
 
 (defalias
@@ -140,7 +148,7 @@
   _        _        _        _        _        _            _        _        _        _        _        _
   _        _        _        _        _        _            _        _        _        _        _
   _        _        _        _        _        _            _        _        _        _
-                             _        _        _            _        _        _
+                             _        _        _            _        _        _        _        _        _
 )
 
   -------------------------------------------------------------------------- |#
