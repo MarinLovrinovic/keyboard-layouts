@@ -1,0 +1,146 @@
+(defcfg
+  input  (low-level-hook)
+  output (send-event-sink 200 20)
+
+  fallthrough false
+
+  allow-cmd true
+)
+
+(defsrc
+  tab      q        w        e        r        t            i        o        p        [        ]        \
+  caps     a        s        d        f        g            k        l        ;        '        ret
+  lsft     y        x        c        v        b            ,        .        -        rsft
+                             lmet     lalt     spc          ralt     102d     left
+)
+
+(deflayer base
+  @đ       q        w        e        @s2_r    t            y        u        i        o        p        @ž
+  @ć       @met_a   @alt_s   @ctl_d   @sft_f   g            h        @sft_j   @ctl_k   @alt_l   @met_č
+  @š       z        x        c        v        b            n        m        ,        .
+                             @fn_del  @num_ret @s1_bspc     @nav_spc @med_tab esc
+)
+
+(deflayer navigation
+  _        pgup     @redo    up       @undo    ins          _        _        _        _        _        _
+  XX       home     left     down     rght     caps         _        rsft     rctl     lalt     rmet
+  _        pgdn     @cut     @copy    @paste   end          _        _        _        XX
+                             _        XX       _            _        _        _
+)
+
+(deflayer media
+  _        _        _        prev     next     _            _        _        _        _        _        _
+  _        _        /        voldwn   volu     _            _        rsft     rctl     lalt     rmet
+  _        _        _        _        _        _            _        _        _        XX
+                             _        pp       mute         _        _        _
+)
+
+(deflayer symbols1
+  _        _        _        _        _        _            @€       @[       @\\      @]       _        _
+  _        lmet     lalt     lctl    lsft      _            @`       @{       S-2      @}       @^
+  XX       _        _        _        _        _            @~       @&       @'       @|
+                             XX       XX       _            S--      -        @@
+)
+
+(deflayer symbols2
+  _        _        _        _        _        _            _        @<       @/       @>       _        _
+  _        lmet     lalt     lctl    lsft      _            $        @lbr     !        @rbr     _
+  XX       _        _        _        _        _            @*       @#       @?       %
+                             XX       XX       _            _        _        _
+)
+
+(deflayer numbers
+  _        _        _        _        _        _            @+       7        8        9        @*       @^
+  _        lmet     lalt     lctl     lsft     _            @=       4        5        6        @/
+  XX       _        _        _        _        _            -        1        2        3
+                             XX       _        _            _        0        .
+)
+
+(deflayer function
+  _        _        _        _        _        _            f12      f7       f8       f9       ssrq     pause
+  _        lmet     lalt     lctl     lsft     _            f11      f4       f5       f6       slck
+  XX       _        _        _        _        _            f10      f1       f2       f3
+                             XX       XX       _            _        _        _
+)
+
+(defalias
+  đ  ]
+  ć  '
+  č  ;
+  ž  \
+  š  [
+
+  +  =
+
+  [  RA-f
+  \\  RA-q
+  ]  RA-g
+  {  RA-b
+  }  RA-n
+  |  RA-w
+  @  RA-v
+  €  RA-e
+  <  102d
+  >  S-102d
+
+  #  S-3
+  &  S-6
+  /  S-7
+  lbr  S-8
+  rbr  S-9
+  =  S-0
+  *  S-@+
+  '  /
+  ?  S-@'
+
+  ~  RA-1
+  ^  RA-3
+  `  RA-7
+  
+  undo  C-z
+  redo  C-y
+  cut  C-x
+  copy  C-c
+  paste  C-v
+
+
+  num  (layer-toggle numbers)
+  sym1  (layer-toggle symbols1)
+  sym2  (layer-toggle symbols2)
+  nav  (layer-toggle navigation)
+  fn  (layer-toggle function)
+  media  (layer-toggle media)
+
+  met_a  (tap-hold-next-release 190 a lmet)
+  alt_s  (tap-hold-next-release 140 s lalt)
+  ctl_d  (tap-hold-next-release 130 d lctl)
+  sft_f  (tap-hold-next-release 130 f lsft)
+
+  sft_j  (tap-hold-next-release 130 j rsft)
+  ctl_k  (tap-hold-next-release 130 k rctl)
+  alt_l  (tap-hold-next-release 140 l lalt)
+  met_č  (tap-hold-next-release 190 @č rmet)
+
+  fn_del  (tap-hold-next-release 130 del @fn)
+  s1_bspc  (tap-hold-next-release 130 bspc @sym1)
+  num_ret  (tap-hold-next-release 130 ret @num)
+
+  nav_spc  (tap-hold-next-release 130 spc @nav)
+  med_tab  (tap-hold-next-release 130 tab @media)
+
+  s2_r  (tap-hold-next-release 130 r @sym2)
+)
+
+
+
+#| --------------------------------------------------------------------------
+                               Layer Template
+
+(deflayer template
+  _        _        _        _        _        _            _        _        _        _        _        _
+  _        _        _        _        _        _            _        _        _        _        _
+  _        _        _        _        _        _            _        _        _        _
+                             _        _        _            _        _        _
+)
+
+  -------------------------------------------------------------------------- |#
