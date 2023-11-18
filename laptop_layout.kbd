@@ -15,6 +15,9 @@
                              lmet     lalt     spc          ralt     102d     left     up       down     rght
 )
 
+;; The key labeled "y" types the character "y" on both the english and croatian layouts.
+;; This probably means that these aliases are not correlated only with one key code,
+;; but perform a more complicated resolution algorythm. Works for now.
 (deflayer base
                                                                                                          esc
   @đ       q        w        e        @s2_r    t            y        u        i        o        p        @ž
@@ -23,6 +26,9 @@
                              @fn_del  @num_ret @s1_bspc     @nav_spc @med_tab left     up       down     rght
 )
 
+;; Without the "XX" over the ".", the held rsft gets picked up by the keyboard again and
+;; the "." is effectively pressed. This is probably a bug.
+;; I added these "XX"s wherever there's a possibility of this happenig.
 (deflayer navigation
                                                                                                          _
   _        pgup     @redo    up       @undo    ins          _        _        _        _        _        _
@@ -31,6 +37,8 @@
                              _        XX       _            _        _        _        _        _        _
 )
 
+;; Converting to windows keycodes for BrightnessUp and BrightnessDown doesn't seem to work right now
+;; so those are not included on this layer.
 (deflayer media
                                                                                                          _
   _        _        _        prev     next     _            _        _        _        _        _        _
@@ -47,6 +55,9 @@
                              XX       XX       _            S--      -        _        _        _        _
 )
 
+;; This layer is activated by pressing "r", which disables the user from pressing shift,
+;; so all of the keys should already be modded with shift
+;; (at least their shifted version should be included in the layer).
 (deflayer symbols2
                                                                                                          _
   _        _        _        _        _        _            _        @<       @/       @>       _        _
@@ -77,9 +88,12 @@
   č  ;
   ž  \
   š  [
-
   +  =
+  '  /
 
+  ~  RA-1
+  ^  RA-3
+  `  RA-7
   [  RA-f
   \\  RA-q
   ]  RA-g
@@ -88,9 +102,9 @@
   |  RA-w
   @  RA-v
   €  RA-e
+  
   <  102d
   >  S-102d
-
   #  S-3
   &  S-6
   /  S-7
@@ -98,12 +112,8 @@
   rbr  S-9
   =  S-0
   *  S-@+
-  '  /
   ?  S-@'
 
-  ~  RA-1
-  ^  RA-3
-  `  RA-7
   
   undo  C-z
   redo  C-y
@@ -119,6 +129,7 @@
   fn  (layer-toggle function)
   media  (layer-toggle media)
 
+
   met_a  (tap-hold-next-release 190 a lmet)
   alt_s  (tap-hold-next-release 140 s lalt)
   ctl_d  (tap-hold-next-release 130 d lctl)
@@ -129,12 +140,14 @@
   alt_l  (tap-hold-next-release 140 l lalt)
   met_č  (tap-hold-next-release 190 @č rmet)
 
+
   fn_del  (tap-hold-next-release 130 del @fn)
-  s1_bspc  (tap-hold-next-release 130 bspc @sym1)
   num_ret  (tap-hold-next-release 130 ret @num)
+  s1_bspc  (tap-hold-next-release 130 bspc @sym1)
 
   nav_spc  (tap-hold-next-release 130 spc @nav)
   med_tab  (tap-hold-next-release 130 tab @media)
+
 
   s2_r  (tap-hold-next-release 130 r @sym2)
 )
@@ -145,6 +158,7 @@
                                Layer Template
 
 (deflayer template
+                                                                                                         _
   _        _        _        _        _        _            _        _        _        _        _        _
   _        _        _        _        _        _            _        _        _        _        _
   _        _        _        _        _        _            _        _        _        _
