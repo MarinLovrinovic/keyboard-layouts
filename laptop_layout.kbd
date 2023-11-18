@@ -17,7 +17,7 @@
 
 ;; The key labeled "y" types the character "y" on both the english and croatian layouts.
 ;; This probably means that these aliases are not correlated only with one key code,
-;; but perform a more complicated resolution algorythm. Works for now.
+;; but perform a more complicated resolution algorithm. Works for now.
 (deflayer base
                                                                                                          esc
   @đ       q        w        e        @s2_r    t            y        u        i        o        p        @ž
