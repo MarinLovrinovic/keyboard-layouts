@@ -61,15 +61,15 @@
 (deflayer symbols2
                                                                                                          _
   _        _        _        _        _        _            _        @<       @/       @>       _        _
-  _        lmet     lalt     lctl    lsft      _            $        @lbr     !        @rbr     _
-  XX       _        _        _        _        _            @*       @#       @?       %
+  _        lmet     lalt     lctl    lsft      _            $        @lbr     !        @rbr     %
+  XX       _        _        _        _        _            @*       @#       @?       @=
                              XX       XX       _            _        _        _        _        _        _
 )
 
 (deflayer numbers
                                                                                                          _
-  _        _        _        _        _        _            @+       7        8        9        @*       @^
-  _        lmet     lalt     lctl     lsft     _            @=       4        5        6        @/
+  _        _        _        _        _        _            _        7        8        9        @*       @^
+  _        lmet     lalt     lctl     lsft     _            @+       4        5        6        @/
   XX       _        _        _        _        _            -        1        2        3
                              XX       _        _            0        .        _        _        _        _
 )
@@ -131,25 +131,25 @@
 
 
   met_a  (tap-hold-next-release 190 a lmet)
-  alt_s  (tap-hold-next-release 140 s lalt)
-  ctl_d  (tap-hold-next-release 130 d lctl)
-  sft_f  (tap-hold-next-release 130 f lsft)
+  alt_s  (tap-hold-next-release 160 s lalt)
+  ctl_d  (tap-hold-next-release 150 d lctl)
+  sft_f  (tap-hold-next-release 140 f lsft)
 
-  sft_j  (tap-hold-next-release 130 j rsft)
-  ctl_k  (tap-hold-next-release 130 k rctl)
-  alt_l  (tap-hold-next-release 140 l lalt)
+  sft_j  (tap-hold-next-release 140 j rsft)
+  ctl_k  (tap-hold-next-release 150 k rctl)
+  alt_l  (tap-hold-next-release 160 l lalt)
   met_č  (tap-hold-next-release 190 @č rmet)
 
 
-  fn_del  (tap-hold-next-release 130 del @fn)
-  num_ret  (tap-hold-next-release 130 ret @num)
-  s1_bspc  (tap-hold-next-release 130 bspc @sym1)
+  fn_del  (tap-hold-next-release 150 del @fn)
+  num_ret  (tap-hold-next-release 150 ret @num)
+  s1_bspc  (tap-hold-next-release 150 bspc @sym1)
 
-  nav_spc  (tap-hold-next-release 130 spc @nav)
-  med_tab  (tap-hold-next-release 130 tab @media)
+  nav_spc  (tap-hold-next-release 150 spc @nav)
+  med_tab  (tap-hold-next-release 150 tab @media)
 
 
-  s2_r  (tap-hold-next-release 130 r @sym2)
+  s2_r  (tap-hold-next-release 170 r @sym2)
 )
 
 
