@@ -1,25 +1,28 @@
 (defcfg
-  input  (device-file "/dev/input/event3")
-  output (uinput-sink "KMonad output")
+  input  (low-level-hook)
+  output (send-event-sink 200 20)
 
   fallthrough false
 
-  allow-cmd false
+  allow-cmd true
 )
 
 (defsrc
                                                                                                          bspc
   tab      q        w        e        r        t            i        o        p        [        ]        \
   caps     a        s        d        f        g            k        l        ;        '        ret
-  lsft     z        x        c        v        b            ,        .        /        rsft
+  lsft     y        x        c        v        b            ,        .        -        rsft
                              lmet     lalt     spc          ralt     102d     left     up       down     rght
 )
 
+;; The key labeled "y" types the character "y" on both the english and croatian layouts.
+;; This probably means that these aliases are not mapped to only one key code,
+;; but perform a more complicated resolution algorithm. Works for now.
 (deflayer base
                                                                                                          esc
-  @đ       q        w        e        @s2_r    t            z        u        i        o        p        @ž
+  @đ       q        w        e        @s2_r    t            y        u        i        o        p        @ž
   @ć       @met_a   @alt_s   @ctl_d   @sft_f   g            h        @sft_j   @ctl_k   @alt_l   @met_č
-  @š       y        x        c        v        b            n        m        ,        .
+  @š       z        x        c        v        b            n        m        ,        .
                              @fn_del  @num_ret @s1_bspc     @nav_spc @med_tab left     up       down     rght
 )
 
@@ -34,11 +37,13 @@
                              _        XX       _            _        _        _        _        _        _
 )
 
+;; Converting to windows keycodes for BrightnessUp and BrightnessDown doesn't seem to work right now
+;; so those are not included on this layer.
 (deflayer media
                                                                                                          _
   _        _        _        prev     next     _            _        _        _        _        _        _
   _        _        /        voldwn   volu     _            _        rsft     rctl     lalt     rmet
-  _        _        _        brdwn    bru      _            _        _        _        XX
+  _        _        _        _        _        _            _        _        _        XX
                              _        pp       mute         _        _        _        _        _        _
 )
 
@@ -47,7 +52,7 @@
   _        _        _        _        _        _            @^       @[       @\\      @]       @€       _
   _        lmet     lalt     lctl    lsft      _            @`       @{       S-2      @}       @~
   XX       _        _        _        _        _            @@       @&       @'       @|
-                             XX       XX       _            @_       @-       _        _        _        _
+                             XX       XX       _            S--      -        _        _        _        _
 )
 
 ;; This layer is activated by pressing "r", which disables the user from pressing shift,
@@ -65,7 +70,7 @@
                                                                                                          _
   _        _        _        _        _        _            _        7        8        9        @*       @^
   _        lmet     lalt     lctl     lsft     _            @+       4        5        6        @/
-  XX       _        _        _        _        _            @-       1        2        3
+  XX       _        _        _        _        _            -        1        2        3
                              XX       _        _            0        .        _        _        _        _
 )
 
@@ -84,9 +89,7 @@
   ž  \
   š  [
   +  =
-  '  -
-  -  /
-  
+  '  /
 
   ~  RA-1
   ^  RA-3
@@ -102,7 +105,6 @@
   
   <  102d
   >  S-102d
-  _  S-/
   #  S-3
   &  S-6
   /  S-7
