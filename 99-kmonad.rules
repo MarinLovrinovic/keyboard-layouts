@@ -1,0 +1,3 @@
+KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+
+KERNEL=="event3", SUBSYSTEM=="input", GROUP="kmonad-input", MODE="0660"
