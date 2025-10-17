@@ -23,7 +23,7 @@
   @đ       q        w        e        @s2_r    t            y        u        i        o        p        @ž
   @ć       @met_a   @alt_s   @ctl_d   @sft_f   g            h        @sft_j   @ctl_k   @alt_l   @met_č
   @š       z        x        c        v        b            n        m        ,        .
-                             @fn_del  @num_ret @s1_spc      @nav_bsp @med_tab left     up       down     rght
+                             @fn_del  @num_ret @s1_bspc     @nav_spc @med_tab left     up       down     rght
 )
 
 ;; Without the "XX" over the ".", the held rsft gets picked up by the keyboard again and
@@ -143,9 +143,9 @@
 
   fn_del  (tap-hold-next-release 150 del @fn)
   num_ret  (tap-hold-next-release 150 ret @num)
-  s1_spc  (tap-hold-next-release 150 spc @sym1)
+  s1_bspc  (tap-hold-next-release 150 bspc @sym1)
 
-  nav_bsp  (tap-hold-next-release 150 bspc @nav)
+  nav_spc  (tap-hold-next-release 150 spc @nav)
   med_tab  (tap-hold-next-release 150 tab @media)
 
 
